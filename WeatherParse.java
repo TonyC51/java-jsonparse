@@ -43,14 +43,15 @@ JSONObject root = (JSONObject) jsonParsed;
         // TODO afficher la valeur de l'attribut "name" de la racine
 
 String name = (String) root.get("name");
-System.out.println(name);
+System.out.println("City name: " + name);
 
         // TODO afficher les valeurs des attributs "lat" et "lon" de l'élément "coord" contenu dans la racine
 JSONObject coord = (JSONObject) root.get("coord");
-Double lon = (Double) coord.get("lon");
-System.out.println(lon);
 Double lat = (Double) coord.get("lat");
-System.out.println(lat);
+System.out.println("City latitude: " + lat);
+
+Double lon = (Double) coord.get("lon");
+System.out.println("City longitude: " + lon);
 
 
         // TODO parcourir tous les éléments de "weather" et afficher le contenu de "main"
@@ -58,7 +59,7 @@ JSONArray weather = (JSONArray) root.get("weather");
 for (int i = 0; i < weather.size(); i++) {
     JSONObject weatherobject = (JSONObject) weather.get(i);
     String main = (String) weatherobject.get("main");
-    System.out.println(main);
+    System.out.println("Weather : " + main);
 	}
 
 
